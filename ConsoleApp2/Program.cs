@@ -33,7 +33,7 @@ namespace ConsoleApp2
                 {
                     Plan.listaLotow[count].dodajLot(new Concorde());
                 }
-
+                //dsada
             }
             catch (FormatException e)
             {
