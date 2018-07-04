@@ -8,13 +8,16 @@ namespace ConsoleApp2
 {
     class PlanLotu
     {
-       public Lot []tab;
+        public List<Lot> listaLotow = new List<Lot>();
 
+    
         public PlanLotu()
         {
-            tab = new Lot[100];
-            for (int i = 0; i < 100; i++)
-                tab[i] = new Lot();
+        }
+        public void dodaj()
+        {
+           Lot a = new Lot();
+           listaLotow.Add(a);
         }
     }
 }

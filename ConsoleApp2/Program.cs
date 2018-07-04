@@ -17,22 +17,32 @@ namespace ConsoleApp2
             int LicznikLotow = 0; //Wiem że powinien być globalny dorobie potem
             PlanLotu Plan = new PlanLotu();
             Console.WriteLine("Dodanie nowego lotu");
-            Plan.tab[LicznikLotow].zajety = true;
+            Plan.dodaj();
             Console.WriteLine("Wybiez samolot \n 1 Boeing \n 2 Concorde");
-           
-            tmp=int.Parse(Console.ReadLine());
-            if (tmp==1)
+            int count = Plan.listaLotow.Count-1;
+            tmp1 =Console.ReadLine();
+            try
             {
-                Console.WriteLine("Wybiez samolot \n 1 Boeing \n 2 Concorde");
-                Plan.tab[LicznikLotow] = new Lot(new Boeing());
+                tmp = Int32.Parse(tmp1); // Nie wim czy lepiej wszystku wrzucić w try czy zrobić tmp zmienną globalną
+                if (tmp == 1)
+                {
+                  
+                    Plan.listaLotow[count].dodajLot(new Boeing());
+                }
+                if (tmp == 2)
+                {
+                    Plan.listaLotow[count].dodajLot(new Concorde());
+                }
+
             }
-            if (tmp == 2)
+            catch (FormatException e)
             {
-                Plan.tab[LicznikLotow] = new Lot(new Concorde());
+                Console.WriteLine(e.Message);
             }
-           
-            Plan.tab[LicznikLotow].dodajlot();
-            Plan.tab[LicznikLotow].wypisz();
+
+
+            Plan.listaLotow[count].dodajlot();
+            Plan.listaLotow[count].wypisz();
         }
     }
 }

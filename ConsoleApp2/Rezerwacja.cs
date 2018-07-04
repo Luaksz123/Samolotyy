@@ -8,10 +8,56 @@ namespace ConsoleApp2
 {
     class Rezerwacja
     {
-        String imie;
-        String nazwisko;
-        Boolean zajete;
-        int Nr;
+        String _imie;
+        public String imie
+        {
+            get
+            {
+                return _imie;
+            }
+            set
+            {
+                _imie = value;
+            }
+        }
+        String _nazwisko;
+        public String nazwisko
+        {
+            get
+            {
+                return _nazwisko;
+            }
+            set
+            {
+                _nazwisko = value;
+            }
+
+        }
+        Boolean _zajete;
+        public Boolean zajete
+        {
+            get
+            {
+                return _zajete;
+            }
+            set
+            {
+                _zajete = value;
+            }
+        }
+        int _Nr;
+        public int Nr
+        {
+            get
+            {
+                return _Nr;
+            }
+            set
+            {
+                _Nr = value;
+            }
+
+        }
 
         public Rezerwacja()
         {
@@ -19,44 +65,9 @@ namespace ConsoleApp2
         }
         public Rezerwacja(int a)
         {
-            Nr=a;
-        }
-        public string getimie()
-        {
-            return imie;
-        }
-        public string getnazwisko()
-        {
-            return nazwisko;
-        }
-        public Boolean getzajete()
-        {
-            return zajete;
-        }
-        public int getnr()
-        {
-            return Nr;
-        }
-
-        public void setimie(string a)
-        {
-             imie=a;
-        }
-        public void setnazwisko(string a)
-        {
-            nazwisko=a;
-        }
-        public void setzajete(Boolean a)
-        {
-             zajete=a;
-        }
-        public void setnr(int a)
-        {
-            Nr=a;
+            Nr = a;
         }
        
-
     }
-
    
 }

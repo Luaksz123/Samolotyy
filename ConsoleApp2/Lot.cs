@@ -13,13 +13,13 @@ namespace ConsoleApp2
         public double Odleglosc;
         public double czasTrwania;
         public Rezerwacja [] tab;
-        public Boolean zajety;
+        //public Boolean zajety;
 
         public void oblicz()
         {
             czasTrwania = Odleglosc / Rodzaj.getPredkosc();
         }
-        public Lot (Samolot a)
+        public void dodajLot (Samolot a)
         {
             Rodzaj = a;
             this.tab = new Rezerwacja[Rodzaj.getliczbaMiejsc()];
@@ -28,7 +28,7 @@ namespace ConsoleApp2
         }
         public Lot()
         {
-            zajety = false;
+           
         }
         public void dodajlot()
         {
@@ -40,16 +40,16 @@ namespace ConsoleApp2
             Console.WriteLine("Wolne miejsca");
             for (int i=0;i< Rodzaj.getliczbaMiejsc();i++)
             {
-                if (tab[i].getzajete()==false)
-                    Console.WriteLine(tab[i].getnr());
+                if (tab[i].zajete==false)
+                Console.WriteLine(tab[i].Nr);
             }
             Console.WriteLine("Podaj miejsce spośród wolnych");
             int tmp= int.Parse(Console.ReadLine());
-            tab[tmp].setzajete(true);
+            tab[tmp].zajete=true;
             Console.WriteLine("Podaj imie");
-            tab[tmp].setimie(Console.ReadLine());
+            tab[tmp].imie=Console.ReadLine();
             Console.WriteLine("Podaj nazwisko");
-            tab[tmp].setnazwisko(Console.ReadLine());
+            tab[tmp].nazwisko=Console.ReadLine();
         }
         public void wypisz()
         {
@@ -60,19 +60,19 @@ namespace ConsoleApp2
             Console.WriteLine("Wolne miejsca", czasTrwania);
             for (int i = 0; i < Rodzaj.getliczbaMiejsc(); i++)
             {
-                if (tab[i].getzajete() == false)
+                if (tab[i].zajete== false)
                 {
-                    Console.WriteLine("Wolne miejsce nr {0}", tab[i].getnr());
+                    Console.WriteLine("Wolne miejsce nr {0}", tab[i].Nr);
                 }
             }
             Console.WriteLine("Zajete miejsca", czasTrwania);
             for (int i = 0; i < Rodzaj.getliczbaMiejsc(); i++)
             {
-                if (tab[i].getzajete() == true)
+                if (tab[i].zajete == true)
                 {
-                    Console.WriteLine("Miejsce nr {0}", tab[i].getnr());
-                    Console.WriteLine("Imie {0}", tab[i].getimie());
-                    Console.WriteLine("Nazwisko {0}", tab[i].getnazwisko());
+                    Console.WriteLine("Miejsce nr {0}", tab[i].Nr);
+                    Console.WriteLine("Imie {0}", tab[i].imie);
+                    Console.WriteLine("Nazwisko {0}", tab[i].nazwisko);
                 }
             }
         }
