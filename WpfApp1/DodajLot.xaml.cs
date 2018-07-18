@@ -20,6 +20,7 @@ namespace WpfApp1
     /// </summary>
     public partial class DodajLot : Window
     {
+        //TODO: Mówiliśmy że nie musisz się bawić przy dodawaniu kontrolek, ale prosto by mogły być ;)
 
         public List<ConsoleApp2.Samolot> Lista = new List<ConsoleApp2.Samolot>();
 
@@ -30,6 +31,7 @@ namespace WpfApp1
 
         private void DodajLotCofnij_Click(object sender, RoutedEventArgs e)
         {
+            //TODO: Tak cały czas w każdej klasie jak będziesz dawał hide to Ci miejsca w pamieci braknie po czasie... jeśli Garbage Collector nie zaskoczy
             this.Hide();
            MainWindow wnd = new MainWindow();
             wnd.Show();

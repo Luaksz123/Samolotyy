@@ -8,11 +8,14 @@ namespace ConsoleApp2
 {
     class Lot
     {
+        //TODO: Skoro klasa ma tyle pól publicznych to może jakaś enkapsulacja i konstruktor do inicjalizacji?
         Samolot Rodzaj;
         public  int nrLotu;
         public double Odleglosc;
         public double czasTrwania;
+        //TODO: Nie wiem dlaczego tutaj nadal jest tablica? Możesz sobie je stosowac ale wydaje mi się że w bardziej praktycznych zastosowaniach będziesz później i tak chciał korzystać z struktur dynamicznych.
         public Rezerwacja [] tab;
+        //TODO: Jesli coś przestaje być potrzebne to to usuwamy żeby nie była zaśmiecania kodu. Zawsze w historii pliku na gicie można poszukac tego i skopiować jeśli będzie potrzbne :)
         //public Boolean zajety;
 
         public void oblicz()
@@ -21,8 +24,10 @@ namespace ConsoleApp2
         }
         public void dodajLot (Samolot a)
         {
+            //TODO: Nazywaj dobrze nazwy zmiennych ten kod ma być wizytówką ;)
             Rodzaj = a;
             this.tab = new Rezerwacja[Rodzaj.getliczbaMiejsc()];
+            //TODO: Nie polecam stosowania forów bez {} ani ifów bo potem błędy dzieją się i nie wiadomo skąd szukanie takie błędu zajmuje potem kilka godzin a te {} nic nie kosztują
             for (int i = 0; i < Rodzaj.getliczbaMiejsc(); i++)
                 tab[i] = new Rezerwacja(i);
         }
@@ -33,6 +38,7 @@ namespace ConsoleApp2
         public void dodajlot()
         {
             Console.WriteLine("Podaj nr lotu");
+            //TODO: Czy nie będzie Exceptiona po wpisaniu czegoś innego niż int? i aplikacja padnie?
             nrLotu = int.Parse(Console.ReadLine());
             Console.WriteLine("Podaj odleglosc");
             Odleglosc = int.Parse(Console.ReadLine());
@@ -44,6 +50,7 @@ namespace ConsoleApp2
                 Console.WriteLine(tab[i].Nr);
             }
             Console.WriteLine("Podaj miejsce spośród wolnych");
+            //TODO: Czy nie będzie Exceptiona po wpisaniu czegoś innego niż int? i aplikacja padnie?
             int tmp= int.Parse(Console.ReadLine());
             tab[tmp].zajete=true;
             Console.WriteLine("Podaj imie");
