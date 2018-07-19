@@ -46,18 +46,13 @@ namespace Samoloty
                 Console.WriteLine("podano bledna nazwe samolotu");
                 Environment.Exit(0);
             }
-            // Do dorobienia przechwycenie bledu zapobiegajacego wpisaniu liczby
+            
             //TODO: Czemu służa takie komentarze w kodzie?
             //Poprawione
             Plan.listaLotow[liczniklotow].dodajlot();
             Plan.listaLotow[liczniklotow].wypisz();
         }
-        // To poniezje moze mi się jeszcze przydac proszę się nie czepiać
-        /*catch (Exception e) 
-        {
-            //TODO: Jeśli łapiwesz tylko FormatException to żaden inny exception nie będzie przechwycony dlatego moim zdaniem najbezpieczniej chwytać zwykły Exception jeśli nie planujesz ich rozbijać albo robić specjalnych operacji w zależności od wyjątku.
-            Console.WriteLine(e.Message);
-        }*/
+        
        
         
     }
