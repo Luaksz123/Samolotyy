@@ -13,7 +13,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 
 
-namespace WpfApp1
+namespace SamolotyWpf
 {
     /// <summary>
     /// Logika interakcji dla klasy DodajLot.xaml
@@ -22,7 +22,7 @@ namespace WpfApp1
     {
         //TODO: Mówiliśmy że nie musisz się bawić przy dodawaniu kontrolek, ale prosto by mogły być ;)
 
-        public List<ConsoleApp2.Samolot> Lista = new List<ConsoleApp2.Samolot>();
+        public List<Samoloty.Samolot> Lista = new List<Samoloty.Samolot>();
 
         public DodajLot()
         {
@@ -42,7 +42,7 @@ namespace WpfApp1
         private void DodajLot_Load(object sender, EventArgs e)
         {
 
-            Lista.Add(new ConsoleApp2.Samolot() { nazwa = "Boeing", Predkosc = 1000, liczbaMiejsc = 20 });
+            Lista.Add(new Samoloty.Samolot() { nazwa = "Boeing", predkosc = 1000, liczbaMiejsc = 20 });
             this.DodajLotSamoloty.ItemsSource=Lista;
            
         }

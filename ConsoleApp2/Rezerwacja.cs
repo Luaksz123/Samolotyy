@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ConsoleApp2
+namespace Samoloty
 {
     class Rezerwacja
     {
@@ -23,7 +23,7 @@ namespace ConsoleApp2
                 _imie = value;
             }
         }
-        
+
         String _nazwisko;
         public String nazwisko
         {
@@ -71,7 +71,7 @@ namespace ConsoleApp2
         {
             Nr = a;
         }
-       
+
     }
-   
+
 }

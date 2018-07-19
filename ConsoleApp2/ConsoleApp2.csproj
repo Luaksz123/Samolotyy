@@ -46,8 +46,7 @@
     <Reference Include="WindowsBase" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Boeing.cs" />
-    <Compile Include="Concorde.cs" />
+    <Compile Include="ListaSamolotow.cs" />
     <Compile Include="Lot.cs" />
     <Compile Include="PanLotu.cs" />
     <Compile Include="Program.cs" />
