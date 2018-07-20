@@ -46,9 +46,8 @@ namespace Samoloty
 
         //TODO: Nie wiem dlaczego tutaj nadal jest tablica? Możesz sobie je stosowac ale wydaje mi się że w bardziej praktycznych zastosowaniach będziesz później i tak chciał korzystać z struktur dynamicznych.
         // Jeżeli ta tablica reprezentuje liczbe miejsc która jest stała dla danego lotu też robic lite?
+        //TODO: XCzy nie można jakoś normalnie nazwać tej tablicy?
         public Rezerwacja [] tab;
-        //TODO: Jesli coś przestaje być potrzebne to to usuwamy żeby nie była zaśmiecania kodu. Zawsze w historii pliku na gicie można poszukac tego i skopiować jeśli będzie potrzbne :)
-        // Poprawione
 
         public Lot()
         {
@@ -64,8 +63,6 @@ namespace Samoloty
             //TODO: Nazywaj dobrze nazwy zmiennych ten kod ma być wizytówką ;)
             //a zmienione na samolot nie wiem czy mozna nazywac zmienna ta sama nazwa co typ
             this.tab = new Rezerwacja[rodzaj.liczbaMiejsc];
-            //TODO: Nie polecam stosowania forów bez {} ani ifów bo potem błędy dzieją się i nie wiadomo skąd szukanie takie błędu zajmuje potem kilka godzin a te {} nic nie kosztują
-            // Poprawione
             for (int i = 0; i < rodzaj.liczbaMiejsc; i++)
             {
                 tab[i] = new Rezerwacja(i);

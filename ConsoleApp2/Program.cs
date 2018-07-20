@@ -16,11 +16,12 @@ namespace Samoloty
             listaSamoloty.samoloty.Add(new Samolot() { predkosc = 1000, liczbaMiejsc = 10, nazwa = "Boeing" });
             listaSamoloty.samoloty.Add(new Samolot() { predkosc = 2000, liczbaMiejsc = 20, nazwa = "Concorde" });
 
-            //TODO: Nie zrobiłeś porządku za sobą i nadal widze nazwy zmiennych tmp tmp1 co one mają oznaczać? Chciałbyś zaglądać do czyjegoś kodu gdzie każda zmienna nazywa się przez a , b, c oczywiście zdarza się że ktoś tak nazwie, bo się spieszy, ale code review jest po to żeby zauważyć ten błąd i żeby auto mógł go poprawić na przyszłość.
-            // poprawione
+            //TODO: Co oznacza nazwa konsola wczytaj? wczytaj jeden znak jakąs konkretną wartość? opcje?? NazwaZmiennej ma rezprezntować to czym jest, nazywanie zmiennych to bolączka, ale jeśli masz czas i pracujesz nad projektem który nie ma deal lina a ma Ci po prostu pokazać jak się to ma robić dobrze to ma być idealnie ctrl + r ctrl + r pozwala Ci zmienić nazwę zmiennej wraz z jej wszystkimi wystapieniami.
             string konsloaWczytaj;
 
+            //TODO: Straszny syf w tym kodzie cześć operacji wypisywanych do konsoli dzieje się w modelach cześć tutaj w tej klasie. Za co jest ona odpowiedzialana? Albo robisz wszystkie operacje wypisywania w consoli komunikatów i prwoadzenia aplikacji w jednej klasie albo w drugiej. Robi się straszny syf
             int licznik=0;
+            //TODO: Raczej stosuj konwencję nazweniczą dla zmiennych lokalnych licznikLotow, dla zmiennym prywatnych _LicznikLotow, a dla zmiennym publicznych LicznikLotow
             int liczniklotow = 0;
             PlanLotu Plan = new PlanLotu();
             Console.WriteLine("Dodanie nowego lotu");
@@ -47,13 +48,8 @@ namespace Samoloty
                 Environment.Exit(0);
             }
             
-            //TODO: Czemu służa takie komentarze w kodzie?
-            //Poprawione
             Plan.listaLotow[liczniklotow].dodajlot();
             Plan.listaLotow[liczniklotow].wypisz();
         }
-        
-       
-        
     }
 }
