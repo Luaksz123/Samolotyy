@@ -11,6 +11,7 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using SamolotyKonsola;
 
 
 namespace SamolotyWpf
@@ -22,7 +23,7 @@ namespace SamolotyWpf
     {
         //TODO: Mówiliśmy że nie musisz się bawić przy dodawaniu kontrolek, ale prosto by mogły być ;)
 
-        public List<Samoloty.Samolot> Lista = new List<Samoloty.Samolot>();
+        public List<Samolot> Lista = new List<Samolot>();
 
         public DodajLot()
         {
@@ -42,7 +43,7 @@ namespace SamolotyWpf
         private void DodajLot_Load(object sender, EventArgs e)
         {
 
-            Lista.Add(new Samoloty.Samolot() { nazwa = "Boeing", predkosc = 1000, liczbaMiejsc = 20 });
+            Lista.Add(new Samolot() { nazwa = "Boeing", predkosc = 1000, liczbaMiejsc = 20 });
             this.DodajLotSamoloty.ItemsSource=Lista;
            
         }

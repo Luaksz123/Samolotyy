@@ -1,10 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Collections.Generic;
 
-namespace Samoloty
+namespace SamolotyKonsola
 {
     class ListaSamolotow
     {
@@ -14,7 +10,7 @@ namespace Samoloty
         public List<Samolot> samoloty
         {
             get { return _samoloty; }
-            set { _samoloty = value; }
+            set {_samoloty = value; }
         }
 
     }
