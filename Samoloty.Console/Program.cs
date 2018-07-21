@@ -1,8 +1,15 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using  Samoloty.Model;
 
-namespace SamolotyKonsola
+
+namespace Samoloty.Console
 {
     //TODO: Za te nazwy aplikacji to Ci ktoś w zespole krzywde zrobi albo Cie zbluzga. Dlatego polecam nazywać odpowiednio nazwy projektów np. Samoloty.Model Samoloty.Desktop Samoloty.IOS a całą solucję jako samoloty wtedy automatycznie tworzą Ci sie odpowiednie przestrzenie nazw które w większych projektach sa przydatne bo potem brakuje nazw dla klas a przez przestrzenie wszystko jest uporządkowane :)
+    // Zrobione
     class Program
     {
         static void Main(string[] args)
@@ -19,14 +26,14 @@ namespace SamolotyKonsola
             //TODO: Raczej stosuj konwencję nazweniczą dla zmiennych lokalnych licznikLotow, dla zmiennym prywatnych _LicznikLotow, a dla zmiennym publicznych LicznikLotow
             int liczniklotow = 0;
             PlanLotu Plan = new PlanLotu();
-            Console.WriteLine("Dodanie nowego lotu");
+            System.Console.WriteLine("Dodanie nowego lotu");
             Plan.listaLotow.Add(new Lot());
-            Console.WriteLine("Wybiez samolot sposrod podanych i wpisze jego nazwe");
+            System.Console.WriteLine("Wybiez samolot sposrod podanych i wpisze jego nazwe");
             foreach (Samolot element in listaSamoloty.samoloty)
             {
-                Console.WriteLine(element.nazwa);
+                System.Console.WriteLine(element.nazwa);
             }
-            konsloaWczytaj = Console.ReadLine();
+            konsloaWczytaj = System.Console.ReadLine();
             foreach (Samolot element in listaSamoloty.samoloty)
             {
                if (element.nazwa == konsloaWczytaj)
@@ -39,7 +46,7 @@ namespace SamolotyKonsola
             }
             if (licznik == 0)
             {
-                Console.WriteLine("podano bledna nazwe samolotu");
+                System.Console.WriteLine("podano bledna nazwe samolotu");
                 Environment.Exit(0);
             }
             

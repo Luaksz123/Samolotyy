@@ -1,4 +1,4 @@
-﻿namespace SamolotyKonsola
+﻿namespace Samoloty.Model
 {
     public class Samolot
     {

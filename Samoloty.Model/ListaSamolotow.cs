@@ -1,8 +1,8 @@
 ﻿using System.Collections.Generic;
 
-namespace SamolotyKonsola
+namespace Samoloty.Model
 {
-    class ListaSamolotow
+    public class ListaSamolotow
     {
 
         private List<Samolot> _samoloty=new List<Samolot>();

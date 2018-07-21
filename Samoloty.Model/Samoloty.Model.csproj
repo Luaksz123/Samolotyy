@@ -6,8 +6,8 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProjectGuid>{4FE00E5B-72CB-4FD3-B464-7B672E559CF7}</ProjectGuid>
     <OutputType>Exe</OutputType>
-    <RootNamespace>SamolotyKonsola</RootNamespace>
-    <AssemblyName>SamolotyKonsola</AssemblyName>
+    <RootNamespace>Samoloty.Model</RootNamespace>
+    <AssemblyName>Samoloty.Model</AssemblyName>
     <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
@@ -64,7 +64,6 @@
     <Compile Include="ListaSamolotow.cs" />
     <Compile Include="Lot.cs" />
     <Compile Include="PanLotu.cs" />
-    <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Rezerwacja.cs" />
     <Compile Include="Samolot.cs" />

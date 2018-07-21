@@ -1,8 +1,8 @@
 ﻿using System.Collections.Generic;
 
-namespace SamolotyKonsola
+namespace Samoloty.Model
 {
-    class PlanLotu
+   public  class PlanLotu
     {
         public List<Lot> listaLotow = new List<Lot>();
 
