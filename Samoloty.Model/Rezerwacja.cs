@@ -60,7 +60,6 @@ namespace Samoloty.Model
             }
 
         }
-
         public Rezerwacja()
         {
             zajete = false;

@@ -106,9 +106,6 @@ namespace Samoloty.Console
                         break;
                 }
             }
-        }
-            
-        
-        
+        } 
     }
 }

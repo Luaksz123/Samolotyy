@@ -10,30 +10,23 @@
         
 
         private double _predkosc;
-
         public double predkosc
         {
             get { return _predkosc; }
             set { _predkosc = value; }
         }
-
         public int liczbaMiejsc;
         private int _iczbaMiejsc;
-
         public int iczbaMiejsc
         {
             get { return _iczbaMiejsc; }
             set { _iczbaMiejsc = value; }
         }
-
         public string nazwa;
-
         public Samolot()
         {
 
         }
-       
-
     }
 }
 
