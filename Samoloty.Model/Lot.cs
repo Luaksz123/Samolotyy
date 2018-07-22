@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 
 namespace Samoloty.Model
 {
@@ -8,7 +9,10 @@ namespace Samoloty.Model
         // Zmiana na privat i dodanie propertisów
         // Zmiana załozen. Wywalilem klasy concorde i boeing
 
-
+        public Lot()
+        {
+           
+        }
         private Samolot _rodzaj;
 
         public Samolot rodzaj
@@ -42,108 +46,29 @@ namespace Samoloty.Model
         }
 
 
-        public DateTime _data
-        {
-            get { return _data; }
-            set { _data = value; }
-        }
-
-
         //TODO: Nie wiem dlaczego tutaj nadal jest tabRezerwacjelica? Możesz sobie je stosowac ale wydaje mi się że w bardziej praktycznych zastosowaniach będziesz później i tak chciał korzystać z struktur dynamicznych.
         // Jeżeli ta tabRezerwacjelica reprezentuje liczbe miejsc która jest stała dla danego lotu też robic lite?
         //TODO: XCzy nie można jakoś normalnie nazwać tej tabRezerwacjelicy?
+        // Zmieniłem ale nie wiem czy Ci się spodoba 
+        public List<Rezerwacja> Rezerwacje = new List<Rezerwacja>() ;
 
-        public Rezerwacja [] tabRezerwacje;
+       
 
-        public Lot()
-        {
-
-        }
-
-        public void oblicz()
+        public void Oblicz()
         {
             czasTrwania = Odleglosc / rodzaj.predkosc;
         }
-        private void dodajRezerwacje()
+        public void InicjalizujRezerwacje()
         {
             //TODO: Nazywaj dobrze nazwy zmiennych ten kod ma być wizytówką ;)
-            //a zmienione na samolot nie wiem czy mozna nazywac zmienna ta sama nazwa co typ
-            this.tabRezerwacje = new Rezerwacja[rodzaj.liczbaMiejsc];
+            // a zmienione na samolot nie wiem czy mozna nazywac zmienna ta sama nazwa co typ
+            
             for (int i = 0; i < rodzaj.liczbaMiejsc; i++)
             {
-                tabRezerwacje[i] = new Rezerwacja(i);
+                Rezerwacje.Add(new Rezerwacja(i));
             }
+
         }
-        
-        public void dodajlot()
-        {
-            int nrMiejsca=0;
-            dodajRezerwacje();
-            Console.WriteLine("Podaj nr lotu");
-            //TODO: Czy nie będzie Exceptiona po wpisaniu czegoś innego niż int? i aplikacja padnie?
-            //Poprawione
-            string stringNrLotu = Console.ReadLine();
-            try
-            {
-                int nr =Int32.Parse(stringNrLotu);
-                nrLotu = nr;
-            }
-            catch (Exception e)
-            {
-                Console.WriteLine(e.Message);
-            }
-            Console.WriteLine("Podaj odleglosc");
-            Odleglosc = int.Parse(Console.ReadLine());
-            this.oblicz();
-            Console.WriteLine("Wolne miejsca");
-            for (int i=0;i< rodzaj.liczbaMiejsc;i++)
-            {
-                if (tabRezerwacje[i].zajete==false)
-                Console.WriteLine(tabRezerwacje[i].Nr);
-            }
-            Console.WriteLine("Podaj miejsce spośród wolnych");
-            //TODO: Czy nie będzie Exceptiona po wpisaniu czegoś innego niż int? i aplikacja padnie?
-            //Poprawione
-            string StringMiejsce= Console.ReadLine();
-            try
-            {
-                int nr = Int32.Parse(StringMiejsce);
-                nrMiejsca= nr;
-            }
-            catch (Exception e)
-            {
-                Console.WriteLine(e.Message);
-            }
-            tabRezerwacje[nrMiejsca].zajete=true;
-            Console.WriteLine("Podaj imie");
-            tabRezerwacje[nrMiejsca].imie=Console.ReadLine();
-            Console.WriteLine("Podaj nazwisko");
-            tabRezerwacje[nrMiejsca].nazwisko=Console.ReadLine();
-        }
-        public void wypisz()
-        {
-            Console.WriteLine("Rodzaj samolotu to: {0}",rodzaj.nazwa);
-            Console.WriteLine("Nr lotu to: {0}", nrLotu);
-            Console.WriteLine("Odleglosc to: {0}", Odleglosc);
-            Console.WriteLine("Czas trwania to {0}", czasTrwania);
-            Console.WriteLine("Wolne miejsca", czasTrwania);
-            for (int i = 0; i < rodzaj.liczbaMiejsc; i++)
-            {
-                if (tabRezerwacje[i].zajete== false)
-                {
-                    Console.WriteLine("Wolne miejsce nr {0}", tabRezerwacje[i].Nr);
-                }
-            }
-            Console.WriteLine("Zajete miejsca", czasTrwania);
-            for (int i = 0; i < rodzaj.liczbaMiejsc; i++)
-            {
-                if (tabRezerwacje[i].zajete == true)
-                {
-                    Console.WriteLine("Miejsce nr {0}", tabRezerwacje[i].Nr);
-                    Console.WriteLine("Imie {0}", tabRezerwacje[i].imie);
-                    Console.WriteLine("Nazwisko {0}", tabRezerwacje[i].nazwisko);
-                }
-            }
-        }
+       
     }
 }

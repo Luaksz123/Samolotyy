@@ -5,8 +5,10 @@ namespace Samoloty.Model
    public class Rezerwacja
     {
         //TODO: Na trello była także wzmianka o code snipets które pomogą Ci szybko tworzyć propertisy a także możesz anpisać sobie swoje włąsne snipety żeby nie pisać wiele razy tego samego
+        // Użyłem propfull. O to choziło?
         //TODO: Jeśli chcesz spróbować użyc code snippet możesz napisać w edytorze prop i nacisnąć dwa razy tabRezerwacje zobaczysz co się stanie ;)
         //TODO: Ubogie modele które nic nie robią i zawieraja tylko typy niczego Cię nie nauczą dlatego polecam dodać chociaż jakieś zapisywanie do pliku xml json albo do sqlite zawsze warto się nauczyć
+        // Dodam coś jak reszta będzie ok
         String _imie;
         public String imie
         {
