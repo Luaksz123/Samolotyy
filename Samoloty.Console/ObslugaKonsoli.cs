@@ -12,8 +12,8 @@ namespace Samoloty.Console
     {
         
 
-        // TODO Nie jetem pewien czy tak może być, ale nie mam pomysłu jak inaczej przeszukać tutaj listę samolotów stworzoną w głownym programie 
-       
+        // TODO: Nie jetem pewien czy tak może być, ale nie mam pomysłu jak inaczej przeszukać tutaj listę samolotów stworzoną w głownym programie 
+        // TODO: Możesz przekazać liste lotów do konstruktora jako referencję i będzie miało odwołanie do tej samej listy co Twój główny program i trzymać listę lotów jako zmienną prywatną
 
         public String ProgramDodajLot(List<Samolot> lista)
         {
@@ -32,10 +32,7 @@ namespace Samoloty.Console
         public Int32 LotWprowadzNr() {
 
             System.Console.WriteLine("Podaj nr lotu");
-            //TODO: Czy nie będzie Exceptiona po wpisaniu czegoś innego niż int? i aplikacja padnie?
-            //Poprawione
             string stringNrLotu = System.Console.ReadLine();
-            
             try
             {
                 Int32 nr = Int32.Parse(stringNrLotu);
@@ -45,10 +42,12 @@ namespace Samoloty.Console
             {
                 System.Console.WriteLine(e.Message);
             }
+            //TODO: Do zwracania błędnych wartości często stosuje się konwencję -1
             return 0;
         }
         public Int32 LotWprowadzOdleglosc()
         {
+            //TODO: Może warto okreslić w jakich jednostkach użytkownik powinien podac odległość?
             System.Console.WriteLine("Podaj odleglosc");
             string stringOdleglosc = System.Console.ReadLine();
             try
@@ -71,8 +70,6 @@ namespace Samoloty.Console
                     System.Console.WriteLine(element.Nr);
             }
             System.Console.WriteLine("Podaj miejsce spośród wolnych");
-            //TODO: Czy nie będzie Exceptiona po wpisaniu czegoś innego niż int? i aplikacja padnie?
-            //Poprawione
             string StringMiejsce = System.Console.ReadLine();
             try
             {
@@ -93,14 +90,13 @@ namespace Samoloty.Console
         }
         public String LotWczytajImie()
         {
-
             System.Console.WriteLine("Podaj imie");
             return System.Console.ReadLine();
-
         }
         public String LotWczytajNazwisko()
         {
-
+            
+            //TODO: Usuwaj puste miejsce :D podziurawione jak ser
             System.Console.WriteLine("Podaj nazwisko");
             return System.Console.ReadLine();
         }
@@ -130,6 +126,7 @@ namespace Samoloty.Console
                 }
             }
         }
+        //TODO: Moze zamiast nazwy switch lepsze byłoby i bardziej naturalne Menu? bo Switcha stosuje się nie tylko do menu
         public Int32 ProgramSwitch()
         {
             System.Console.WriteLine("Wprowadz\n 1 Aby dodac nowy lot\n 2 Abydodac samolot\n 3 Aby wswietlic lot \n 4 Aby wyjsc z programu");
@@ -147,6 +144,7 @@ namespace Samoloty.Console
         }
         // TODO moge tutaj wczytać wszystkie rzeczy niezbędne do stworzenia samolotu i zwrócić gotowy obiekt do programu głownego
         // czy wczytywać osobnymi metodami nazewe, preskows i liczbe miejsc?
+        // TODO: Tak możesz to robić w jednej metodzie ale podziel tą metodę na kilka prywatnych odpowiedzialnych za każdą część :)
         public Samolot ProgramNowySamolot(Samolot NowySamolot)
         {
             System.Console.WriteLine("Wprowadz nazwe samolotu");
@@ -164,6 +162,8 @@ namespace Samoloty.Console
             }
             //TODO Nie wiem czy to ponizej jest poprawne. Jak wyciagnac potem inta z try i przypisac do czegos, w sencie wyciagnac liczbaMiejsc i przypisac do NowySamolot.liczbaMiejsc ? 
             // Wydaje mi sie ze jezeli wczesniej try nie wykrył błędu to chyba tak można.
+            // TODO: Tutaj może rozważyć wyrzucenie wyjątku w górę programu i w pliku Program.cs sprawdzić czy użytkownik dodawał prawidłowo dane jeśli nie to wczytać menu od nowa i rozpocząc kolejną nową pętle programu
+            // TODO: a dlaczego robisz wszędzie podwójnie tego Parsa?
             NowySamolot.liczbaMiejsc= Int32.Parse(stringLiczbaMIejsc);
             System.Console.WriteLine("Wprowadz predkosc");
             string stringPredkosc = System.Console.ReadLine();
@@ -179,6 +179,7 @@ namespace Samoloty.Console
             NowySamolot.predkosc= Int32.Parse(stringPredkosc);
             return NowySamolot;
         }
+        //TODO: Możesz zpodzielić metodę na kilka mniejszych prywatnych
         public Int32 ProgramWyswietlanieLotow(List<Lot> listaLotow )
         {
             Int32 licznik=0;
@@ -219,6 +220,7 @@ namespace Samoloty.Console
             }
             return nrLotu;
         }
+        //TODO: Dziwna nazwa metody
         public void ProgramBladSwitch()
         {
             System.Console.WriteLine("Podano błedna wartosc");

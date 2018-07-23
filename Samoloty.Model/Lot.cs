@@ -5,10 +5,7 @@ namespace Samoloty.Model
 {
     public  class Lot
     {
-        //TODO: Skoro klasa ma tyle pól publicznych to może jakaś enkapsulacja i konstruktor do inicjalizacji?
-        // Zmiana na privat i dodanie propertisów
-        // Zmiana załozen. Wywalilem klasy concorde i boeing
-
+        //TODO: Stosuje się konwencję do kolejności pól i metod : 1. Eventy 2. Pola i propertisy 3. Komendy 4. Metody publiczne i prywatne 5. Konstruktory na samym końcu
         public Lot()
         {
            
@@ -45,14 +42,7 @@ namespace Samoloty.Model
             set { _czasTrwania = value; }
         }
 
-
-        //TODO: Nie wiem dlaczego tutaj nadal jest tabRezerwacjelica? Możesz sobie je stosowac ale wydaje mi się że w bardziej praktycznych zastosowaniach będziesz później i tak chciał korzystać z struktur dynamicznych.
-        // Jeżeli ta tabRezerwacjelica reprezentuje liczbe miejsc która jest stała dla danego lotu też robic lite?
-        //TODO: XCzy nie można jakoś normalnie nazwać tej tabRezerwacjelicy?
-        // Zmieniłem ale nie wiem czy Ci się spodoba 
-        public List<Rezerwacja> Rezerwacje = new List<Rezerwacja>() ;
-
-       
+        public List<Rezerwacja> Rezerwacje = new List<Rezerwacja>();
 
         public void Oblicz()
         {
@@ -60,14 +50,10 @@ namespace Samoloty.Model
         }
         public void InicjalizujRezerwacje()
         {
-            //TODO: Nazywaj dobrze nazwy zmiennych ten kod ma być wizytówką ;)
-            // a zmienione na samolot nie wiem czy mozna nazywac zmienna ta sama nazwa co typ
-            
             for (int i = 0; i < rodzaj.liczbaMiejsc; i++)
             {
                 Rezerwacje.Add(new Rezerwacja(i));
             }
-
         }
        
     }

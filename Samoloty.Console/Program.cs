@@ -19,15 +19,11 @@ namespace Samoloty.Console
             listaSamoloty.samoloty.Add(new Samolot() { predkosc = 1000, liczbaMiejsc = 10, nazwa = "Boeing" });
             listaSamoloty.samoloty.Add(new Samolot() { predkosc = 2000, liczbaMiejsc = 20, nazwa = "Concorde" });
             ObslugaKonsoli Konsola = new ObslugaKonsoli ();
-            //TODO: Co oznacza nazwa konsola wczytaj? wczytaj jeden znak jakąs konkretną wartość? opcje?? NazwaZmiennej ma rezprezntować to czym jest, nazywanie zmiennych to bolączka, ale jeśli masz czas i pracujesz nad projektem który nie ma deal lina a ma Ci po prostu pokazać jak się to ma robić dobrze to ma być idealnie ctrl + r ctrl + r pozwala Ci zmienić nazwę zmiennej wraz z jej wszystkimi wystapieniami.
-            // Zrobione
             String _NazwaSamolotu;
-            //TODO: Straszny syf w tym kodzie cześć operacji wypisywanych do konsoli dzieje się w modelach cześć tutaj w tej klasie. Za co jest ona odpowiedzialana? Albo robisz wszystkie operacje wypisywania w consoli komunikatów i prwoadzenia aplikacji w jednej klasie albo w drugiej. Robi się straszny syf
             Int32 _LicznikLotow=0;
             Int32 _Licznik = 0;
+            //TODO: Poleciłbym nazwę w stylu _WybranaOpcja zamiast _ZmiennaSwitch
             Int32 _ZmiennaSwitch; 
-            //TODO: Raczej stosuj konwencję nazweniczą dla zmiennych lokalnych _LicznikLotow, dla zmiennym prywatnych __LicznikLotow, a dla zmiennym publicznych _LicznikLotow
-            // Dodawanie nowego lotu
             PlanLotu Plan = new PlanLotu();
             while (true)
             {
@@ -50,6 +46,7 @@ namespace Samoloty.Console
                             if (_Licznik == 0)
                             {
                                 Konsola.ProgramBladNazywSamolotu();
+                                //TODO: Jesteś pewien że chcesz od razu zamknąc aplikację? Nie lepiej wyświetlić błąd i wrócić do głównego menu?
                                 Environment.Exit(0);
                             }
                             Plan.listaLotow[_LicznikLotow].InicjalizujRezerwacje();
@@ -62,13 +59,16 @@ namespace Samoloty.Console
                             String Nazwisko = Konsola.LotWczytajNazwisko();
                             Plan.listaLotow[_LicznikLotow].Rezerwacje[NrRezerwacji].nazwisko = Nazwisko;
                             _LicznikLotow++;
+                            //TODO: Tutaj korzysta się z break a nie z continue jesteś pewien że wiesz jak działa switch?
                             continue;
                         }
+                        //TODO: Podkreślone na zielono fragmentu kodu nigdy się nie wykonają więc możesz je usunąć
                         break;
                     // Dodawanie samoltu
                     case 2:
                         {
                             Samolot NowySamolot = new Samolot();
+                            //TODO: nad nazwą listaSamooty bym się zastanowił można wybrac coś bardziej wyrafinowanego :D
                             listaSamoloty.samoloty.Add(Konsola.ProgramNowySamolot(NowySamolot));
                             continue;
                         }
@@ -82,6 +82,7 @@ namespace Samoloty.Console
                             {
                                 break;
                             }
+                            //TODO: Literówka
                             foreach (Lot elemnt in Plan.listaLotow)
                             {
                                 if (elemnt.nrLotu == nrLotu)
@@ -101,6 +102,7 @@ namespace Samoloty.Console
                         break;
                     default:
                         {
+                            //TODO: Co oznacza metoda ProgramBladSwitch??? Polska język trudny język :D?
                             Konsola.ProgramBladSwitch();
                         }
                         break;
