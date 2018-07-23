@@ -10,12 +10,14 @@
             set { _predkosc = value; }
         }
         //TODO: Czemu liczba miejsca public występuje podwójnie????
-        public int liczbaMiejsc;
-        private int _iczbaMiejsc;
-        public int iczbaMiejsc
+        // Mój błąd przyznaję się bez bicia
+        // Poprawione
+        
+        private int _LiczbaMiejsc;
+        public int LiczbaMiejsc
         {
-            get { return _iczbaMiejsc; }
-            set { _iczbaMiejsc = value; }
+            get { return _LiczbaMiejsc; }
+            set { _LiczbaMiejsc = value; }
         }
         public string nazwa;
         public Samolot()

@@ -6,10 +6,8 @@ namespace Samoloty.Model
     public  class Lot
     {
         //TODO: Stosuje się konwencję do kolejności pól i metod : 1. Eventy 2. Pola i propertisy 3. Komendy 4. Metody publiczne i prywatne 5. Konstruktory na samym końcu
-        public Lot()
-        {
-           
-        }
+        // Troche jestem zaskoczony  że konstruktor na samym końcua ale ok poprawione
+     
         private Samolot _rodzaj;
 
         public Samolot rodzaj
@@ -50,11 +48,16 @@ namespace Samoloty.Model
         }
         public void InicjalizujRezerwacje()
         {
-            for (int i = 0; i < rodzaj.liczbaMiejsc; i++)
+            for (int i = 0; i < rodzaj.LiczbaMiejsc; i++)
             {
                 Rezerwacje.Add(new Rezerwacja(i));
             }
         }
-       
+
+        public Lot()
+        {
+
+        }
+
     }
 }

@@ -43,12 +43,14 @@ namespace Samoloty.Console
                 System.Console.WriteLine(e.Message);
             }
             //TODO: Do zwracania błędnych wartości często stosuje się konwencję -1
-            return 0;
+            //Poprawione
+            return -1;
         }
         public Int32 LotWprowadzOdleglosc()
         {
             //TODO: Może warto okreslić w jakich jednostkach użytkownik powinien podac odległość?
-            System.Console.WriteLine("Podaj odleglosc");
+            // Zrobione
+            System.Console.WriteLine("Podaj odleglosc w km");
             string stringOdleglosc = System.Console.ReadLine();
             try
             {
@@ -58,9 +60,8 @@ namespace Samoloty.Console
             catch (Exception e)
             {
                 System.Console.WriteLine(e.Message);
-                return 0;
+                return -1;
             }
-            
         }
         public Int32 LotRezerwujMiejsce(List<Rezerwacja> rezerwacje) { 
             System.Console.WriteLine("Wolne miejsca");
@@ -77,14 +78,14 @@ namespace Samoloty.Console
                 if (rezerwacje[nr].zajete ==true)
                 {
                     System.Console.WriteLine("Wybrales zajete miejsce");
-                    return 0;
+                    return -1;
                 }
                 return  nr;
             }
             catch (Exception e)
             {
                 System.Console.WriteLine(e.Message);
-                return 0;
+                return -1;
             }
            
         }
@@ -94,8 +95,7 @@ namespace Samoloty.Console
             return System.Console.ReadLine();
         }
         public String LotWczytajNazwisko()
-        {
-            
+        { 
             //TODO: Usuwaj puste miejsce :D podziurawione jak ser
             System.Console.WriteLine("Podaj nazwisko");
             return System.Console.ReadLine();
@@ -143,7 +143,7 @@ namespace Samoloty.Console
             }
         }
         // TODO moge tutaj wczytać wszystkie rzeczy niezbędne do stworzenia samolotu i zwrócić gotowy obiekt do programu głownego
-        // czy wczytywać osobnymi metodami nazewe, preskows i liczbe miejsc?
+        // czy wczytywać osobnymi metodami nazwe i liczbe miejsc?
         // TODO: Tak możesz to robić w jednej metodzie ale podziel tą metodę na kilka prywatnych odpowiedzialnych za każdą część :)
         public Samolot ProgramNowySamolot(Samolot NowySamolot)
         {
@@ -164,7 +164,8 @@ namespace Samoloty.Console
             // Wydaje mi sie ze jezeli wczesniej try nie wykrył błędu to chyba tak można.
             // TODO: Tutaj może rozważyć wyrzucenie wyjątku w górę programu i w pliku Program.cs sprawdzić czy użytkownik dodawał prawidłowo dane jeśli nie to wczytać menu od nowa i rozpocząc kolejną nową pętle programu
             // TODO: a dlaczego robisz wszędzie podwójnie tego Parsa?
-            NowySamolot.liczbaMiejsc= Int32.Parse(stringLiczbaMIejsc);
+            // Pogadamy o tym przez skype przy najbliższej okazji
+            NowySamolot.LiczbaMiejsc= Int32.Parse(stringLiczbaMIejsc);
             System.Console.WriteLine("Wprowadz predkosc");
             string stringPredkosc = System.Console.ReadLine();
             try

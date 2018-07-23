@@ -43,16 +43,16 @@ namespace Samoloty.Model
                 _zajete = value;
             }
         }
-        int _Nr;
-        public int Nr
+        int _NrMiejsca;
+        public int NrMiejsca
         {
             get
             {
-                return _Nr;
+                return _NrMiejsca;
             }
             set
             {
-                _Nr = value;
+                _NrMiejsca = value;
             }
 
         }
@@ -62,7 +62,7 @@ namespace Samoloty.Model
         }
         public Rezerwacja(int a)
         {
-            Nr = a;
+            NrMiejsca = a;
         }
 
     }

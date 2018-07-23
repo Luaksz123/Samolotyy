@@ -16,19 +16,19 @@ namespace Samoloty.Console
         {
             ListaSamolotow listaSamoloty;
             listaSamoloty= new ListaSamolotow();
-            listaSamoloty.samoloty.Add(new Samolot() { predkosc = 1000, liczbaMiejsc = 10, nazwa = "Boeing" });
-            listaSamoloty.samoloty.Add(new Samolot() { predkosc = 2000, liczbaMiejsc = 20, nazwa = "Concorde" });
+            listaSamoloty.samoloty.Add(new Samolot() { predkosc = 1000, LiczbaMiejsc = 10, nazwa = "Boeing" });
+            listaSamoloty.samoloty.Add(new Samolot() { predkosc = 2000, LiczbaMiejsc = 20, nazwa = "Concorde" });
             ObslugaKonsoli Konsola = new ObslugaKonsoli ();
             String _NazwaSamolotu;
             Int32 _LicznikLotow=0;
             Int32 _Licznik = 0;
             //TODO: Poleciłbym nazwę w stylu _WybranaOpcja zamiast _ZmiennaSwitch
-            Int32 _ZmiennaSwitch; 
+            Int32 _WybranaOpcja; 
             PlanLotu Plan = new PlanLotu();
             while (true)
             {
-                _ZmiennaSwitch= Konsola.ProgramSwitch();
-                switch (_ZmiennaSwitch)
+                _WybranaOpcja= Konsola.ProgramSwitch();
+                switch (_WybranaOpcja)
                 {
                     case 1:
                         {
@@ -43,11 +43,12 @@ namespace Samoloty.Console
                                     _Licznik++;
                                 }
                             }
-                            if (_Licznik == 0)
+                            if (_Licznik == -1)
                             {
                                 Konsola.ProgramBladNazywSamolotu();
                                 //TODO: Jesteś pewien że chcesz od razu zamknąc aplikację? Nie lepiej wyświetlić błąd i wrócić do głównego menu?
-                                Environment.Exit(0);
+                                //Racja poprawione
+                                break;
                             }
                             Plan.listaLotow[_LicznikLotow].InicjalizujRezerwacje();
                             Plan.listaLotow[_LicznikLotow].Odleglosc = Konsola.LotWprowadzOdleglosc();
@@ -60,7 +61,8 @@ namespace Samoloty.Console
                             Plan.listaLotow[_LicznikLotow].Rezerwacje[NrRezerwacji].nazwisko = Nazwisko;
                             _LicznikLotow++;
                             //TODO: Tutaj korzysta się z break a nie z continue jesteś pewien że wiesz jak działa switch?
-                            continue;
+                            // Racja poprawione
+                           
                         }
                         //TODO: Podkreślone na zielono fragmentu kodu nigdy się nie wykonają więc możesz je usunąć
                         break;
@@ -69,8 +71,9 @@ namespace Samoloty.Console
                         {
                             Samolot NowySamolot = new Samolot();
                             //TODO: nad nazwą listaSamooty bym się zastanowił można wybrac coś bardziej wyrafinowanego :D
+                            // Oj tam oj tam
                             listaSamoloty.samoloty.Add(Konsola.ProgramNowySamolot(NowySamolot));
-                            continue;
+                           
                         }
                         break;
                     // Wyswietlanie lotow
@@ -78,21 +81,22 @@ namespace Samoloty.Console
                         {
                             Lot tmpLot = new Lot();
                             Int32 nrLotu = Konsola.ProgramWyswietlanieLotow(Plan.listaLotow);
-                            if (nrLotu == 0)
+                            if (nrLotu == -1)
                             {
                                 break;
                             }
                             //TODO: Literówka
-                            foreach (Lot elemnt in Plan.listaLotow)
+                            // Poprawione
+                            foreach (Lot element in Plan.listaLotow)
                             {
-                                if (elemnt.nrLotu == nrLotu)
+                                if (element.nrLotu == nrLotu)
                                 {
-                                    tmpLot = elemnt;
+                                    tmpLot = element;
                                     break;
                                 }
                             }
                             Konsola.WypiszLot(tmpLot);
-                            continue;
+                            
                         }
                         break;
                     case 4:
@@ -103,6 +107,7 @@ namespace Samoloty.Console
                     default:
                         {
                             //TODO: Co oznacza metoda ProgramBladSwitch??? Polska język trudny język :D?
+                            //Wolisz program blad przełącznika?
                             Konsola.ProgramBladSwitch();
                         }
                         break;
