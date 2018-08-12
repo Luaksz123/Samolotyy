@@ -16,8 +16,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\Samoloty.Data\Samoloty.Data.csproj" />
-    <ProjectReference Include="..\Samoloty.Entities\Samoloty.Entities.csproj" />
+    <ProjectReference Include="..\Samoloty.Entitiesss\Samoloty.Entitiesss.csproj" />
     <ProjectReference Include="..\SamolotyModelCore\SamolotyModelCore.csproj" />
   </ItemGroup>
 

@@ -2,11 +2,10 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace Samoloty.Entities
+namespace Samoloty.Entitiesss
 {
-    public class Samolot
+    public class Rezerwacje
     {
         public Int32 ID { get; set; }
-        public virtual Lot Loty { get; set; }
     }
 }
