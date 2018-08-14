@@ -9,13 +9,11 @@ namespace EntityTestowanie
     {
         static void Main(string[] args)
         {
-            using (var context = new SamolotyyyyContext()) 
-            {
+            var context = new SamolotyyyyContext();
+
                 var test = new Samoloty.Entitiesss.Samoloty();
                 context.Samoloty.Add(test);
                 context.SaveChanges();
-                
-            }
         }
     }
 

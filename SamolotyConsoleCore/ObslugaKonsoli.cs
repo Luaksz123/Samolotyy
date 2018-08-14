@@ -42,14 +42,10 @@ namespace Samoloty.Console
             {
                 System.Console.WriteLine(e.Message);
             }
-            //TODO: Do zwracania błędnych wartości często stosuje się konwencję -1
-            //Poprawione
             return -1;
         }
         public Int32 LotWprowadzOdleglosc()
         {
-            //TODO: Może warto okreslić w jakich jednostkach użytkownik powinien podac odległość?
-            // Zrobione
             System.Console.WriteLine("Podaj odleglosc w km");
             string stringOdleglosc = System.Console.ReadLine();
             try
@@ -96,7 +92,6 @@ namespace Samoloty.Console
         }
         public String LotWczytajNazwisko()
         { 
-            //TODO: Usuwaj puste miejsce :D podziurawione jak ser
             System.Console.WriteLine("Podaj nazwisko");
             return System.Console.ReadLine();
         }
@@ -142,7 +137,7 @@ namespace Samoloty.Console
                 return 0;
             }
         }
-        // TODO moge tutaj wczytać wszystkie rzeczy niezbędne do stworzenia samolotu i zwrócić gotowy obiekt do programu głownego
+        // TODO: moge tutaj wczytać wszystkie rzeczy niezbędne do stworzenia samolotu i zwrócić gotowy obiekt do programu głownego
         // czy wczytywać osobnymi metodami nazwe i liczbe miejsc?
         // TODO: Tak możesz to robić w jednej metodzie ale podziel tą metodę na kilka prywatnych odpowiedzialnych za każdą część :)
         public Samolot ProgramNowySamolot(Samolot NowySamolot)
