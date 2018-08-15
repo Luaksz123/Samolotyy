@@ -14,7 +14,7 @@ namespace Samoloty.Entitiesss
         
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            optionsBuilder.UseSqlite("filename=D:\\Projekty\\Samolotyy\\EntityTestowanie\\Samoloty.db");
+            optionsBuilder.UseSqlite("FileName=Samoloty.db");
         }
     }
 }

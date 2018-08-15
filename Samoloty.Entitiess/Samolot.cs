@@ -1,14 +1,13 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations;
 using System.Text;
 
-namespace Samoloty.Entitiesss
+namespace Samoloty.Entities
 {
-   public class Samoloty
+    public  class Samolot
     {
-        [Key]
         public Int32 ID { get; set; }
+        public Int32 Predkosc { get; set; }
         public String Nazwa { get; set; }
     }
 }
